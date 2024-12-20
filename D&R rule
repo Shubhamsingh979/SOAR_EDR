@@ -4,24 +4,25 @@ events:
 op: and
 rules:
   - op: is windows
-  - op: or
+  - op: and
     rules:
-    - case sensitive: false
-      op: ends with
-      path: event/FILE_PATH
-      value: LaZagne.exe
-    - case sensitive: false
-      op: ends with
-      path: event/COMMAND_LINE
-      value: all
-    - case sensitive: false
-      op: contains
-      path: event/COMMAND_LINE
-      value: LaZagne
-    - case sensitive: false
-      op: is
-      path: event/HASH
-      value: '467e49f1f795c1b08245ae621c59cdf06df630fc1631dc0059da9a032858a486'
+      - case sensitive: false
+        op: ends with
+        path: event/COMMAND_LINE
+        value: all
+      - case sensitive: false
+        op: ends with
+        path: event/PARENT/FILE_PATH
+        value: lazagne.exe
+      - case sensitive: false
+        op: contains
+        path: event/COMMAND_LINE
+        value: LaZagne
+      - case sensitive: false
+        op: is
+        path: event/HASH
+        value: 467e49f1f795c1b08245ae621c59cdf06df630fc1631dc0059da9a032858a486
+
 
 respond:
 - action: report
