@@ -1,3 +1,3 @@
 # SOAR_EDR
-
-Full link: 
+LASAGNE: https://github.com/AlessandroZ/LaZagne
+Full link to article: 
